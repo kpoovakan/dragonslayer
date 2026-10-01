@@ -47,3 +47,24 @@ body {
         font-weight: 400;
     }
 }
+
+dialog {
+    width: 90vw;
+    height: 85vh;
+    background-color: var(--colorGrey);
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    position: relative;
+}
+dialog::backdrop {
+    background-color: color-mix(in oklab, #00000000 50%, var(--colorGrey));
+    backdrop-filter: blur(3px);
+}
+dialog img {
+    display: block;
+    padding: 13px;
+    padding-top: 314px;
+    width: 100%;
+    box-sizing: border-box;
+}

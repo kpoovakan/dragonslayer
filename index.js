@@ -76,13 +76,24 @@ function dialogAbout(what) {
         aClose.href = "javascript:void(0);";
         aClose.innerText = "back to game >"
         aClose.setAttribute("onclick", "dialogAbout('hide')");
-        aClose.style.float = "right";
+        aClose.style.position = "absolute";
+        aClose.style.right = "0";
+        aClose.style.bottom = "0";
+        aClose.style.padding = "31px";
+        aClose.style.backgroundColor = "var(--colorGrey)";
+        aClose.style.borderRadius = "3px";
+        const img = document.createElement("img");
+        img.src = "assets/html.png";
+        const span4 = document.createElement("span");
+        span4.innerText = "the entire HTML source code";
         p.appendChild(span1);
         p.appendChild(aKpoovakan);
         p.appendChild(span2);
         p.appendChild(aGitHub);
         p.appendChild(span3);
+        p.appendChild(img);
         p.appendChild(aClose);
+        p.appendChild(span4);
         dialog.appendChild(p);
         document.body.appendChild(dialog);
         var grab = document.getElementById("about");
