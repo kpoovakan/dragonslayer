@@ -46,7 +46,7 @@ function dialogAbout(what) {
         aKpoovakan.href = "https://kpoovakan.github.io";
         aKpoovakan.innerText = "kpoovakan";
         const span2 = document.createElement("span");
-        span2.innerText = `. As a fun challenge, kpoovakan built Dragonslayer with almost no HTML. She used a single <!DOCTYPE html> tag and a single <script> tag. Everything else was built dynamically through frontend JavaScript and CSS! Check out Dragonslayer's source code on `;
+        span2.innerText = `. As a fun challenge, kpoovakan built Dragonslayer with almost no HTML. She used a single <!doctype html> tag and a single <script> tag. Everything else was built dynamically through frontend JavaScript and CSS! Check out Dragonslayer's source code on `;
         const aGitHub = document.createElement("a");
         aGitHub.href = "https://github.com/kpoovakan/dragonslayer";
         aGitHub.innerText = "GitHub";
