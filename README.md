@@ -1,2 +1,2 @@
 # dragonslayer
-A mini choose-your-own-story game built with frontend JS and CSS, almost no HTML.
+A mini choose-your-own-story game built with frontend JS and CSS, nearly no HTML.
