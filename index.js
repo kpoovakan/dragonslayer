@@ -18,3 +18,38 @@ window.addEventListener("load", function() {
     favicon.href = "/indexfiles/favicon.png";
     document.head.appendChild(favicon);
 });
+function dialogAbout(what) {
+    var grab = document.getElementById("about");
+    if (grab === null) {
+        const dialog = document.createElement("dialog");
+        dialog.id = "about";
+        const p = document.createElement("p");
+        const span1 = document.createElement("span");
+        span1.innerText = `Welcome to Dragonslayer! This is an interactive story created by `;
+        const aKpoovakan = document.createElement("a");
+        aKpoovakan.href = "https://kpoovakan.github.io";
+        aKpoovakan.innerText = "kpoovakan";
+        const span2 = document.createElement("span");
+        span2.innerText = `. As a fun challenge, kpoovakan built Dragonslayer with almost no HTML. She used a single <!DOCTYPE html> tag and a single <script> tag. Everything else was built dynamically through frontend JavaScript and CSS! Check out Dragonslayer's source code on `;
+        const aGitHub = document.createElement("a");
+        aGitHub.href = "https://github.com/kpoovakan/dragonslayer";
+        aGitHub.innerText = "GitHub";
+        const span3 = document.createElement("span");
+        span3.innerText = ".";
+        p.appendChild(span1);
+        p.appendChild(aKpoovakan);
+        p.appendChild(span2);
+        p.appendChild(aGitHub);
+        p.appendChild(span3);
+        dialog.appendChild(p);
+        document.body.appendChild(dialog);
+        var grab = document.getElementById("about");
+    }
+    if (what == "show") {
+        grab.showModal();
+    } else if (what == "hide") {
+        grab.close();
+    } else {
+        console.error(`cmd: ${what} in attempt to show/hide dialogAbout`);
+    }
+}
