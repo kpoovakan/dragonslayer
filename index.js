@@ -32,6 +32,11 @@ window.addEventListener("load", function() {
     favicon.type = "image/png";
     favicon.href = "/indexfiles/favicon.png";
     document.head.appendChild(favicon);
+
+    // title
+    const title = document.createElement("title");
+    title.textContent = "Dragonslayer || interactive story game by kpoovakan";
+    document.head.appendChild(title);
 });
 
 function dialogAbout(what) {
