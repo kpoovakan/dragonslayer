@@ -11,6 +11,10 @@ biru, abu-abu, hijau, cokelat, merah gelap */
 body {
     background-color: var(--colorBlue);
     color: var(--colorForeground);
+    font-family: "Grenze Gotisch", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 31px;
     a:link, a:visited {
         color: var(--colorForeground);
         text-decoration: none;

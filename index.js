@@ -11,6 +11,21 @@ window.addEventListener("load", function() {
     stylesheet.href = "style.css";
     document.head.appendChild(stylesheet);
 
+    // font linking
+    const pre1 = document.createElement("link");
+    pre1.rel = "preconnect";
+    pre1.href = "https://fonts.googleapis.com";
+    document.head.appendChild(pre1);
+    const pre2 = document.createElement("link");
+    pre2.rel = "preconnect";
+    pre2.href = "https://fonts.gstatic.com";
+    pre2.crossOrigin = "";
+    document.head.appendChild(pre2);
+    const pre3 = document.createElement("link");
+    pre3.href = "https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100..900&display=swap";
+    pre3.rel = "stylesheet";
+    document.head.appendChild(pre3);
+
     // favicon linking
     const favicon = document.createElement("link");
     favicon.rel = "shortcut icon";
