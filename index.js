@@ -95,3 +95,15 @@ function dialogAbout(what) {
         console.error(`cmd: ${what} in attempt to show/hide dialogAbout`);
     }
 }
+
+async function textType(text, id) {
+    const element = document.getElementById(id);
+    const length = text.length;
+    var current = "";
+    const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+    for (let i = 0; i < length; i++) {
+        var current = current + text[i];
+        await wait(31.4);
+        element.innerHTML = current;
+    }
+}
