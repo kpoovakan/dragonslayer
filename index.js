@@ -37,6 +37,21 @@ window.addEventListener("load", function() {
     const title = document.createElement("title");
     title.textContent = "Dragonslayer || interactive story game by kpoovakan";
     document.head.appendChild(title);
+
+    // header
+    const heading = document.createElement("p");
+    heading.className = "header";
+    heading.textContent = "Dragonslayer";
+    const h1 = document.createElement("a");
+    h1.href = "javascript:void(0);";
+    h1.setAttribute("onclick", "dialogAbout('show')");
+    h1.textContent = "about";
+    heading.appendChild(h1);
+    const h2 = document.createElement("a");
+    h2.href = "https://github.com/kpoovakan/dragonslayer";
+    h2.textContent = "source";
+    heading.appendChild(h2);
+    document.body.appendChild(heading);
 });
 
 function dialogAbout(what) {
@@ -57,11 +72,17 @@ function dialogAbout(what) {
         aGitHub.innerText = "GitHub";
         const span3 = document.createElement("span");
         span3.innerText = ".";
+        const aClose = document.createElement("a");
+        aClose.href = "javascript:void(0);";
+        aClose.innerText = "back to game >"
+        aClose.setAttribute("onclick", "dialogAbout('hide')");
+        aClose.style.float = "right";
         p.appendChild(span1);
         p.appendChild(aKpoovakan);
         p.appendChild(span2);
         p.appendChild(aGitHub);
         p.appendChild(span3);
+        p.appendChild(aClose);
         dialog.appendChild(p);
         document.body.appendChild(dialog);
         var grab = document.getElementById("about");

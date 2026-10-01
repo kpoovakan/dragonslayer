@@ -23,4 +23,27 @@ body {
     a:hover {
         text-decoration: underline;
     }
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+.header {
+    background-color: var(--colorForeground);
+    color: var(--colorBlue);
+    margin: 0;
+    padding: 13px;
+    text-align: right;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    gap: 31px;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    a:link, a:visited, a:hover{
+        color: var(--colorBlue);
+        font-weight: 400;
+    }
 }
