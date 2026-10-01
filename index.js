@@ -18,6 +18,7 @@ window.addEventListener("load", function() {
     favicon.href = "/indexfiles/favicon.png";
     document.head.appendChild(favicon);
 });
+
 function dialogAbout(what) {
     var grab = document.getElementById("about");
     if (grab === null) {

@@ -1,1 +1,22 @@
 @charset "UTF-8";
+/* ["ccdee0","a4a1a5","6f8f66","736359","491d1d"]
+biru, abu-abu, hijau, cokelat, merah gelap */
+:root {
+    --colorForeground: #491d1d;
+    --colorBrown: #736359;
+    --colorGreen: #6f8f66;
+    --colorGrey: #a4a1a5;
+    --colorBlue: #ccdee0;
+}
+body {
+    background-color: var(--colorBlue);
+    color: var(--colorForeground);
+    a:link, a:visited {
+        color: var(--colorForeground);
+        text-decoration: none;
+        font-weight: 600;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+}
