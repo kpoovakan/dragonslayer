@@ -44,6 +44,25 @@ window.addEventListener("load", function() {
     viewport.content = "width=device-width, initial-scale=1.0";
     document.head.appendChild(viewport);
 
+    // main body container
+    const main = document.createElement("div");
+    main.className = "container";
+    main.id = "container";
+    //document.body.appendChild(main);
+
+    // main inner containers
+    const stage = document.createElement("div");
+    stage.className = "stage";
+    stage.id = "stage";
+    main.appendChild(stage);
+    const column = document.createElement("div");
+    column.className = "column";
+    column.id = "column";
+    main.appendChild(column);
+
+    // append main
+    document.body.appendChild(main);
+
     // header
     const heading = document.createElement("p");
     heading.className = "header";
@@ -57,7 +76,7 @@ window.addEventListener("load", function() {
     h2.href = "https://github.com/kpoovakan/dragonslayer";
     h2.textContent = "source";
     heading.appendChild(h2);
-    document.body.appendChild(heading);
+    document.getElementById("column").appendChild(heading);
 });
 
 function dialogAbout(what) {
@@ -126,12 +145,23 @@ async function textType(text, id) {
 }
 
 function backdrop(filename) { // uses just the name, no file extension
+    var backdropContainer = document.getElementById("backdropContainer");
+    if (backdropContainer === null) {
+        var backdropContainer = document.createElement("div");
+        backdropContainer.className = "backdropContainer";
+        backdropContainer.id = "backdropContainer";
+        document.getElementById("stage").appendChild(backdropContainer);
+    } else {
+        backdropContainer.replaceChildren();
+    }
     const path = `assets/backdrops/${filename}.svg`;
     const backdrop = document.createElement("img");
     backdrop.src = path;
     backdrop.className = "backdrop";
-    const backdropContainer = document.createElement("div");
-    backdropContainer.className = "backdropContainer";
     backdropContainer.appendChild(backdrop);
-    document.body.appendChild(backdropContainer);
+    if (filename === "shop") {
+        backdropContainer.style.backgroundColor = "var(--colorForeground)";
+    } else if (filename === "tower" || filename === "field") {
+        backdropContainer.style.backgroundColor = "var(--colorBlue)";
+    }
 }
