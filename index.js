@@ -178,14 +178,14 @@ function dialogAbout(what) {
     }
 }
 
-async function textType(text, id) {
+async function textType(text, id = "mainText") {
     const element = document.getElementById(id);
     const length = text.length;
     var current = "";
     const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
     for (let i = 0; i < length; i++) {
         var current = current + text[i];
-        await wait(31.4);
+        await wait(3.14);
         element.innerHTML = current;
     }
 }
@@ -227,5 +227,9 @@ function character(name, costume, x, y, size = 1) {
 }
 
 function delCharacter(name) {
-    document.getElementById(name).remove();
+    let char = document.getElementById(name);
+    if (char == null) {
+        return;
+    }
+    char.remove();
 }
