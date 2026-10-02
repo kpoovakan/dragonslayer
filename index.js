@@ -38,6 +38,12 @@ window.addEventListener("load", function() {
     title.textContent = "Dragonslayer || interactive story game by kpoovakan";
     document.head.appendChild(title);
 
+    // meta viewport
+    const viewport = document.createElement("meta");
+    viewport.name = "viewport";
+    viewport.content = "width=device-width, initial-scale=1.0";
+    document.head.appendChild(viewport);
+
     // header
     const heading = document.createElement("p");
     heading.className = "header";
