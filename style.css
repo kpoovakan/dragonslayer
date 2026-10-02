@@ -14,7 +14,7 @@ body {
     font-family: "Grenze Gotisch", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 31px;
+    font-size: 26px;
     a:link, a:visited {
         color: var(--colorForeground);
         text-decoration: none;
@@ -54,6 +54,7 @@ body {
     position: relative;
     height: 100%;
     flex-grow: 1;
+    overflow-y: auto;
 }
 
 .header {
@@ -132,4 +133,36 @@ dialog img {
     padding: 0;
     display: block;
     z-index: 31415;
+}
+
+p {
+    margin: 0;
+    padding: 31.4px;
+}
+.buttons {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    gap: 13px;
+    justify-content: center;
+}
+button {
+    background-color: var(--colorForeground);
+    color: var(--colorBlue);
+    outline: none;
+    border-radius: 3px;
+    border: 3px solid var(--colorForeground);
+    font-family: "Grenze Gotisch", serif;
+    font-size: 26px;
+}
+button:hover {
+    background-color: var(--colorBlue);
+    color: var(--colorForeground);
+    cursor: pointer;
+}
+.buttonDisabled {
+    background-color: color-mix(in oklab, #00000000 50%, var(--colorGrey));
+    border: 3px solid color-mix(in oklab, #00000000 50%, var(--colorGrey));
+    pointer-events: none;
 }

@@ -77,6 +77,52 @@ window.addEventListener("load", function() {
     h2.textContent = "source";
     heading.appendChild(h2);
     document.getElementById("column").appendChild(heading);
+
+    // other script linking
+    const scriptStory = document.createElement("script");
+    scriptStory.src = "story.js";
+    document.head.appendChild(scriptStory);
+
+    // intro
+    const textbox = document.createElement("p");
+    textbox.id = "mainText";
+    textbox.innerText = "Dragons are dangerous creatures, kidnapping princesses and townsfolk alike. The kingdom of Unus trains strong, noble, and valiant dragonslayers every year.";
+    document.getElementById("column").appendChild(textbox);
+    backdrop("field");
+    character("dragon", "fly", "50%", "36%", "2");
+
+    // buttons
+    const buttons = document.createElement("div");
+    buttons.className = "buttons";
+    buttons.id = "buttons";
+    const back = document.createElement("button");
+    back.id = "back";
+    back.innerText = "< back";
+    back.setAttribute("onclick", "back()");
+    back.className = "buttonDisabled";
+    buttons.appendChild(back);
+    const next = document.createElement("button");
+    next.id = "next";
+    next.innerText = "next >";
+    next.setAttribute("onclick", "next()");
+    buttons.appendChild(next);
+    buttons.style.display = "flex";
+    document.getElementById("column").appendChild(buttons);
+
+    // button choices
+    const choices = document.createElement("div");
+    choices.className = "buttons";
+    choices.id = "choices";
+    const one = document.createElement("button");
+    one.id = "choiceOne";
+    one.setAttribute("onclick", "choice(this)");
+    const two = document.createElement("button");
+    two.id = "choiceTwo";
+    two.setAttribute("onclick", "choice(this)");
+    choices.appendChild(one);
+    choices.appendChild(two);
+    choices.style.display = "none";
+    document.getElementById("column").appendChild(choices);
 });
 
 function dialogAbout(what) {
