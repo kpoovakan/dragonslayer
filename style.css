@@ -47,6 +47,7 @@ body {
     margin: 0;
     padding: 0;
     flex-grow: 0;
+    position: relative;
 }
 .column {
     display: block;
@@ -124,4 +125,11 @@ dialog img {
     border-radius: 3px;
     outline: 9px solid var(--colorForeground);
     background-color: var(--colorForeground);
+}
+.character {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    display: block;
+    z-index: 31415;
 }

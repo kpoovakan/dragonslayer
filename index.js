@@ -165,3 +165,21 @@ function backdrop(filename) { // uses just the name, no file extension
         backdropContainer.style.backgroundColor = "var(--colorBlue)";
     }
 }
+
+function character(name, costume, x, y, size = 1) {
+    var char = document.getElementById(name);
+    if (char === null) {
+        var char = document.createElement("img");
+        char.className = "character";
+        char.id = name;
+        document.getElementById("stage").appendChild(char);
+    }
+    char.src = `assets/${name}/${costume}.svg`;
+    char.style.top = y;
+    char.style.left = x;
+    char.style.transform = `scale(${size}) translate(-50%, -50%)`;
+}
+
+function delCharacter(name) {
+    document.getElementById(name).remove();
+}
