@@ -118,3 +118,14 @@ async function textType(text, id) {
         element.innerHTML = current;
     }
 }
+
+function backdrop(filename) { // uses just the name, no file extension
+    const path = `assets/backdrops/${filename}.svg`;
+    const backdrop = document.createElement("img");
+    backdrop.src = path;
+    backdrop.className = "backdrop";
+    const backdropContainer = document.createElement("div");
+    backdropContainer.className = "backdropContainer";
+    backdropContainer.appendChild(backdrop);
+    document.body.appendChild(backdropContainer);
+}
