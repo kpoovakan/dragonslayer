@@ -2,7 +2,7 @@
 
 globalThis.currentScene = 0;
 const functions = [
-    "sceneZero", "sceneOne", "sceneTwo"
+    "sceneZero", "sceneOne", "sceneTwo", "sceneThree"
 ];
 function back() {
     globalThis.currentScene = globalThis.currentScene - 1;
@@ -62,19 +62,25 @@ function choice(thisElement) {
 }
 
 function sceneZero() {
+    textType("Dragonslayer is an interactive story by kpoovakan. Use the buttons below to start!");
+    delCharacter("dragon");
+    backdrop("thumb");
+}
+
+function sceneOne() {
     backdrop("field");
     character("dragon", "fly", "50%", "36%", "2");
     delCharacter("judah");
     textType("Dragons are dangerous creatures, kidnapping princesses and townsfolk alike. The kingdom of Unus trains strong, noble, and valiant dragonslayers every year.");
 }
 
-function sceneOne() {
+function sceneTwo() {
     backdrop("shop");
     character("judah", "wave", "50%", "50%");
     delCharacter("dragon");
     textType("Judah is a dragonslayer recruit. When he isn't training, he spends his spare time in his father's shop, maintaining merchandise and serving the townsfolk.", "mainText");
 }
 
-function sceneTwo() {
+function sceneThree() {
     textType("Hello, world!");
 }

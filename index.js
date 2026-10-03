@@ -83,13 +83,12 @@ window.addEventListener("load", function() {
     scriptStory.src = "story.js";
     document.head.appendChild(scriptStory);
 
-    // intro
+    // thumb
     const textbox = document.createElement("p");
     textbox.id = "mainText";
-    textbox.innerText = "Dragons are dangerous creatures, kidnapping princesses and townsfolk alike. The kingdom of Unus trains strong, noble, and valiant dragonslayers every year.";
+    textbox.innerText = "Dragonslayer is an interactive story by kpoovakan. Use the buttons below to start!";
     document.getElementById("column").appendChild(textbox);
-    backdrop("field");
-    character("dragon", "fly", "50%", "36%", "2");
+    backdrop("thumb");
 
     // buttons
     const buttons = document.createElement("div");
@@ -201,8 +200,14 @@ function backdrop(filename) { // uses just the name, no file extension
         backdropContainer.replaceChildren();
     }
     const path = `assets/backdrops/${filename}.svg`;
-    const backdrop = document.createElement("img");
-    backdrop.src = path;
+    if (filename === "thumb") {
+        var backdrop = document.createElement("object");
+        backdrop.type = "image/svg+xml";
+        backdrop.data = path;
+    } else {
+        var backdrop = document.createElement("img");
+        backdrop.src = path;
+    }
     backdrop.className = "backdrop";
     backdropContainer.appendChild(backdrop);
     if (filename === "shop") {
