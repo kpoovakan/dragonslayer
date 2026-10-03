@@ -189,6 +189,18 @@ async function textType(text, id = "mainText") {
     }
 }
 
+async function textAdd(text, id = "mainText") {
+    const element = document.getElementById(id);
+    const length = text.length;
+    var current = element.innerText;
+    const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+    for (let i = 0; i < length; i++) {
+        var current = current + text[i];
+        await wait(3.14);
+        element.innerHTML = current;
+    }
+}
+
 function backdrop(filename) { // uses just the name, no file extension
     var backdropContainer = document.getElementById("backdropContainer");
     if (backdropContainer === null) {
@@ -217,7 +229,7 @@ function backdrop(filename) { // uses just the name, no file extension
     }
 }
 
-function character(name, costume, x, y, size = 1) {
+function character(name, costume, x, y, flip = 0, size = 1) {
     var char = document.getElementById(name);
     if (char === null) {
         var char = document.createElement("img");
@@ -229,9 +241,12 @@ function character(name, costume, x, y, size = 1) {
     char.style.top = y;
     char.style.left = x;
     if (name == "ruby") {
-        var finalSize = Number(size) + 0.314;
+        var finalSize = Number(size) + 0.5;
     } else {
         var finalSize = Number(size);
+    }
+    if (flip) {
+        var finalSize = `-${finalSize}, ${finalSize}`;
     }
     char.style.transform = `scale(${finalSize}) translate(-50%, -50%)`;
 }
