@@ -69,7 +69,7 @@ function sceneZero() {
 
 function sceneOne() {
     backdrop("field");
-    character("dragon", "fly", "50%", "36%", "2");
+    character("dragon", "fly", "50%", "36%", "3.14");
     delCharacter("judah");
     textType("Dragons are dangerous creatures, kidnapping princesses and townsfolk alike. The kingdom of Unus trains strong, noble, and valiant dragonslayers every year.");
 }

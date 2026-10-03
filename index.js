@@ -228,7 +228,12 @@ function character(name, costume, x, y, size = 1) {
     char.src = `assets/${name}/${costume}.svg`;
     char.style.top = y;
     char.style.left = x;
-    char.style.transform = `scale(${size}) translate(-50%, -50%)`;
+    if (name == "ruby") {
+        var finalSize = Number(size) + 0.314;
+    } else {
+        var finalSize = Number(size);
+    }
+    char.style.transform = `scale(${finalSize}) translate(-50%, -50%)`;
 }
 
 function delCharacter(name) {

@@ -142,6 +142,7 @@ dialog img {
     margin: 0;
     padding: 0;
     display: block;
+    width: 10cqw;
     z-index: 31415;
 }
 
